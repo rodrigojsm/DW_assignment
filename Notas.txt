@@ -1,0 +1,14 @@
+Recomendação para imagens:
+
+svg -> vetorial
+webp -> lossless e lossy
+
+
+Recomendação para vídeos:
+
+webm + h.265
+
+
+Procurar por bibliotecas -> npm
+
+Use libraries for logins and databases.

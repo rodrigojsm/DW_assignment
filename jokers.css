@@ -1,0 +1,100 @@
+
+/* MAIN CONTAINER */
+main {
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+h1 {
+    font-family: "BalatroFont", monospace;
+    font-size: 3em;
+    color: white;
+
+    text-align: center;
+    text-shadow: 4px 4px 0 #000;
+
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* JOKERS CONTAINER */
+.jokers-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 85%;
+    margin: 100px auto;
+
+    column-gap: 40px;
+    row-gap: 30px;
+
+    justify-items: center;
+    align-items: start;
+}
+
+/* INDIVIDUAL JOKER CARD */
+.joker-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    width: 400px;
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 3px solid white;
+    border-radius: 12px;
+
+    color: white;
+    text-shadow: 2px 2px 0 black;
+
+    transition: transform 0.2s ease;
+}
+
+/* HOVER */
+.joker-card:hover {
+    transform: scale(1.05);
+}
+
+/* JOKER IMAGE */
+.joker-card img {
+    width: 120px;
+    height: 150px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+/* JOKER INFORMATION */
+.joker-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* NO RESULTS */
+.jokers-container > p {
+    color: white;
+    text-shadow: 2px 2px 0 black;
+}
+
+
+.no-jokers {
+    display: none; 
+
+    position: fixed;
+    top: 20%;
+    left: 37.5%;
+    transform: translateX(-50%);
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* VIDEO */
+.no-jokers video {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}

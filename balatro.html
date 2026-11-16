@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Balatro</title>
+        <link rel="stylesheet" href="web_design.css">
+        <script src="balatro.js" defer></script>
+    </head>
+
+    <body>
+
+        <video autoplay muted loop playsinline>
+            <source src="Animations/balatro-20.webm" type="video/webm">
+        </video>
+
+        <header class="viewport-header">
+            <h1>Balatro Joker Researcher</h1>
+        </header>
+
+        <div class="filters">
+
+            <!-- RARITY SECTION -->
+            <section class="rarity">
+                <input type="checkbox" id="rarity-burger">
+
+                <label for="rarity-burger">Rarity</label>
+
+                <nav class="rarity-menu">
+                    <button class="rarity-button rarity-common" type="button">
+                        Common
+                    </button>
+
+                    <button class="rarity-button rarity-uncommon" type="button">
+                        Uncommon
+                    </button>
+
+                    <button class="rarity-button rarity-rare" type="button">
+                        Rare
+                    </button>
+                </nav>
+            </section>
+
+
+            <!-- TYPE SECTION -->
+            <section class="type">
+                <input type="checkbox" id="type-burger">
+
+                <label for="type-burger">Type</label>
+
+                <nav class="type-menu">
+                    <button class="type-button type-plus_mult" type="button">+m</button>
+                    <button class="type-button type-plus_chip" type="button">+c</button>
+                    <button class="type-button type-times_mult" type="button">Xm</button>
+                    <button class="type-button type-plus_both" type="button">++</button>
+                    <button class="type-button type-effect" type="button">!!</button>
+                    <button class="type-button type-retrigger" type="button">...</button>
+                    <button class="type-button type-economy" type="button">+$</button>
+                </nav>
+            </section>
+
+        </div>
+
+        <button class="search-button" type="button">Search</button>
+
+
+    </body>
+</html>
