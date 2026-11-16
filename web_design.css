@@ -199,7 +199,7 @@ video {
 .menu-button {
     position: fixed;
     bottom: 5%;
-    left: 50%;
+    margin: 0 auto;
     transform: translateX(-50%);
     z-index: 1000;
 }
@@ -207,7 +207,7 @@ video {
 .search-button {
     position: absolute;
     bottom: 5%;
-    left: 50%;
+    margin: 0 auto;
     transform: translateX(-50%);
 }
 

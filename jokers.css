@@ -34,6 +34,18 @@ h1 {
     align-items: start;
 }
 
+@keyframes flip-top {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
 /* INDIVIDUAL JOKER CARD */
 .joker-card {
     display: flex;
@@ -50,7 +62,7 @@ h1 {
     color: white;
     text-shadow: 2px 2px 0 black;
 
-    transition: transform 0.2s ease;
+    animation: flip-top 0.8s ease both;
 }
 
 /* HOVER */
@@ -85,7 +97,7 @@ h1 {
 
     position: fixed;
     top: 20%;
-    left: 37.5%;
+    left: 37.25%;
     transform: translateX(-50%);
 
     align-items: center;
