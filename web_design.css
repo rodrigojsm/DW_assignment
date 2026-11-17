@@ -19,7 +19,7 @@ body {
     overflow-y: auto;
 }
 
-/* BACKGROUND VIDEO */
+
 video {
     position: fixed;
     top: 0;
@@ -33,7 +33,7 @@ video {
     z-index: -1;
 }
 
-/* HEADER */
+
 .viewport-header {
     font-family: "BalatroFont", monospace;
     font-size: 2vw;
@@ -45,7 +45,7 @@ video {
     letter-spacing: 2px;
 }
 
-/* FILTER CONTAINER */
+
 .filters {
     display: flex;
 
@@ -60,17 +60,17 @@ video {
     transform: translateX(-50%);
 }
 
-/* INDIVIDUAL SECTIONS */
+
 .filters section {
     position: relative;
 }
 
-/* CHECKBOX */
+
 .filters input {
     display: none;
 }
 
-/* LABELS */
+
 .filters label {
     cursor: pointer;
     font-size: 2.5em;
@@ -80,7 +80,7 @@ video {
 }
 
 
-/* DROPDOWN MENUS */
+
 .filters nav {
     display: none;
 
@@ -98,17 +98,17 @@ video {
     gap: 12px;
 }
 
-/* SHOW RARITY MENU */
+
 #rarity-burger:checked ~ .rarity-menu {
     display: flex;
 }
 
-/* SHOW TYPE MENU */
+
 #type-burger:checked ~ .type-menu {
     display: flex;
 }
 
-/* BUTTONS */
+
 .rarity-button,
 .type-button,
 .search-button {
@@ -176,7 +176,8 @@ video {
 }
 
 .search-button,
-.menu-button {
+.menu-button,
+.all-button {
     display: inline-block;
     text-decoration: none;
 
@@ -203,10 +204,19 @@ video {
     transform: translateX(-50%);
 }
 
-.search-button {
-    position: absolute;
+.search-button,
+.all-button {
+    position: fixed;
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10;
 }
 
+.search-button {
+    margin-left: -150px;
+}
+
+.all-button {
+    margin-left: 150px;
+}

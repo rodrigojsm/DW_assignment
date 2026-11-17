@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const jokersContainer = document.querySelector('.jokers-container');
     const menuButton = document.querySelector('.menu-button');
 
-    // RETURN BUTTON
+
     if (menuButton) {
         menuButton.addEventListener('click', () => {
             window.location.href = 'balatro.html';
@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // LOAD JOKERS DATA FROM JSON FILE
         const response = await fetch('./Data/jokersData.json');
 
         if (!response.ok) {
@@ -20,38 +19,40 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const jokerData = await response.json();
 
-        // GET SELECTED FILTERS
         const params = new URLSearchParams(window.location.search);
 
         const selectedRarity = params.get('rarity') || '';
         const selectedType = params.get('type') || '';
 
-        // FILTER JOKERS
-        const filteredJokers = jokerData.Jokers.filter(joker => {
+        let filteredJokers;
 
-            const matchesRarity =
-                !selectedRarity ||
-                joker.Rarity.toLowerCase() === selectedRarity.toLowerCase();
+        if (selectedRarity && selectedType === 'all') {
+            filteredJokers = jokerData.Jokers;
 
-            const matchesType =
-                !selectedType ||
-                joker.Type.toLowerCase() === selectedType.toLowerCase();
+        } else {
+            filteredJokers = jokerData.Jokers.filter(joker => {
 
-            return matchesRarity && matchesType;
-        });
+                const matchesRarity =
+                    !selectedRarity ||
+                    joker.Rarity.toLowerCase() === selectedRarity.toLowerCase();
 
-        // DISPLAY RESULTS
+                const matchesType =
+                    !selectedType ||
+                    joker.Type.toLowerCase() === selectedType.toLowerCase();
+
+                return matchesRarity && matchesType;
+            });
+        }
+
         displayJokers(filteredJokers, jokersContainer);
 
     } catch (error) {
 
-        // If JSON fails to load, show no-jokers section
         displayJokers([], jokersContainer);
     }
 });
 
 
-// DISPLAY JOKERS
 function displayJokers(jokers, container) {
 
     if (!container) {
@@ -62,6 +63,7 @@ function displayJokers(jokers, container) {
     container.innerHTML = '';
 
     const noJokers = document.querySelector('.no-jokers');
+
 
     if (jokers.length === 0) {
 

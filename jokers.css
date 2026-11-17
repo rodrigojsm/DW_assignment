@@ -46,7 +46,6 @@ h1 {
     }
 }
 
-/* INDIVIDUAL JOKER CARD */
 .joker-card {
     display: flex;
     align-items: center;
@@ -65,12 +64,12 @@ h1 {
     animation: flip-top 0.8s ease both;
 }
 
-/* HOVER */
+
 .joker-card:hover {
     transform: scale(1.05);
 }
 
-/* JOKER IMAGE */
+
 .joker-card img {
     width: 120px;
     height: 150px;
@@ -78,14 +77,14 @@ h1 {
     image-rendering: pixelated;
 }
 
-/* JOKER INFORMATION */
+
 .joker-info {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-/* NO RESULTS */
+
 .jokers-container > p {
     color: white;
     text-shadow: 2px 2px 0 black;
@@ -105,7 +104,7 @@ h1 {
     z-index: 999;
 }
 
-/* VIDEO */
+
 .no-jokers video {
     width: 500px;
     height: 500px;

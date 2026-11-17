@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filterButtons = document.querySelectorAll('.filters button');
     const searchButton = document.querySelector('.search-button');
+    const all_button = document.querySelector('.all-button').click();
 
-    // RESTORE PREVIOUS SELECTIONS
     restoreSelectedOption('rarity', 'Rarity');
     restoreSelectedOption('type', 'Type');
 
-    // FILTER BUTTONS
+    console.log("Search:", searchButton);
+    console.log("All:", all_button);
+
     filterButtons.forEach(button => {
 
         button.addEventListener('click', () => {
@@ -35,24 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const selectedOption = button.textContent.trim();
 
-            // REMOVE PREVIOUS SELECTION
             buttons.forEach(btn => {
                 btn.classList.remove('selected');
             });
 
-            // SELECT CLICKED BUTTON
             button.classList.add('selected');
 
-            // SAVE SELECTION
             localStorage.setItem(sectionName, selectedOption);
 
-            // UPDATE LABEL
             if (label) {
                 label.textContent =
                     `${sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}: ${selectedOption}`;
             }
 
-            // CLOSE DROPDOWN
             if (checkbox) {
                 checkbox.checked = false;
             }
@@ -61,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // SEARCH BUTTON
+
     if (searchButton) {
         searchButton.addEventListener('click', () => {
 
@@ -74,11 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
     }
-
 });
 
 
-// RESTORE PREVIOUS SELECTIONS
 function restoreSelectedOption(sectionName, defaultLabelText) {
 
     const section = document.querySelector(`.${sectionName}`);
