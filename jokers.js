@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (menu_button) {
         menu_button.addEventListener('click', () => {
-            window.location.href = 'balatro.html';
+            window.location.href = 'index.html';
         });
     }
 
