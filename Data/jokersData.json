@@ -62,6 +62,55 @@
       "Type": "+c",
       "Description": "This Joker gains +8 Chips when each played 2 is scored (Currently +0 Chips)",
       "Image": "Joker_Imgs/80px-Wee_Joker.webp"
+    },
+    {
+      "Name": "Cavendish",
+      "Rarity": "Common",
+      "Type": "Xm",
+      "Description": "X3 Mult, 1 in 1000 chance this card is destroyed at the end of round",
+      "Image": "Joker_Imgs/80px-Cavendish.webp"
+    },
+    {
+      "Name": "Scholar",
+      "Rarity": "Common",
+      "Type": "++",
+      "Description": "Played Aces give +20 Chips and +4 Mult when scored",
+      "Image": "Joker_Imgs/80px-Scholar.webp"
+    },
+    {
+      "Name": "Jolly Joker",
+      "Rarity": "Common",
+      "Type": "+m",
+      "Description": "+8 Mult if played hand contains a Pair",
+      "Image": "Joker_Imgs/80px-Jolly_Joker.webp"
+    },
+    {
+      "Name": "Four Fingers",
+      "Rarity": "Uncommon",
+      "Type": "!!",
+      "Description": "All Flushes and Straights can be made with 4 cards",
+      "Image": "Joker_Imgs/80px-Four_Fingers.webp"
+    },
+    {
+      "Name": "Mime",
+      "Rarity": "Uncommon",
+      "Type": "...",
+      "Description": "Retrigger all card held in hand abilities",
+      "Image": "Joker_Imgs/80px-Mime.webp"
+    },
+    {
+      "Name": "Ceremonial Dagger",
+      "Rarity": "Uncommon",
+      "Type": "+m",
+      "Description": "When Blind is selected, destroy Joker to the right and permanently add double its sell value to this Mult (Currently +0 Mult)",
+      "Image": "Joker_Imgs/80px-Ceremonial_Dagger.webp"
+    },
+    {
+      "Name": "Joker Stencil",
+      "Rarity": "Uncommon",
+      "Type": "Xm",
+      "Description": "X1 Mult for each empty Joker slot Joker Stencil included (Currently X1)",
+      "Image": "Joker_Imgs/80px-Joler_Stencil.webp"
     }
   ]
 }
