@@ -1,5 +1,4 @@
 
-/* MAIN CONTAINER */
 main {
     font-size: 20px;
     text-align: center;
@@ -19,7 +18,7 @@ h1 {
     margin-bottom: 0;
 }
 
-/* JOKERS CONTAINER */
+
 .jokers-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -32,18 +31,6 @@ h1 {
 
     justify-items: center;
     align-items: start;
-}
-
-@keyframes flip-top {
-    0% {
-        transform: perspective(400px) rotateX(90deg);
-        opacity: 0;
-    }
-
-    100% {
-        transform: perspective(400px) rotateX(0deg);
-        opacity: 1;
-    }
 }
 
 .joker-card {
@@ -109,4 +96,17 @@ h1 {
     width: 500px;
     height: 500px;
     object-fit: contain;
+}
+
+
+@keyframes flip-top {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
 }

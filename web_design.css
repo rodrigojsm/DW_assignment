@@ -129,20 +129,67 @@ video {
 
 }
 
-/* BUTTON HOVER */
+.search-button,
+.menu-button,
+.all-button {
+    display: inline-block;
+    text-decoration: none;
+
+    background: linear-gradient(to right, #009dff, #35bd86, #ff4242);
+
+    font-family: "BalatroFont", monospace;
+    font-size: 30px;
+
+    color: white;
+    text-shadow: 3px 3px 0 #000;
+
+    padding: 24px 64px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.menu-button {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.search-button,
+.all-button {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.search-button {
+    margin-left: -150px;
+}
+
+.all-button {
+    margin-left: 150px;
+}
+
+
 .rarity-button:hover,
 .type-button:hover {
     transform: scale(1.05);
     filter: brightness(1.15);
 }
 
-/* BUTTON CLICK */
+
 .rarity-button:active,
 .type-button:active {
     transform: scale(0.95);
 }
 
-/* RARITY COLORS */
+
 .rarity-common,
 .type-plus_chip {
     background-color: #009dff;
@@ -173,50 +220,4 @@ video {
 
 .type-economy {
     background-color: #d1aa00;
-}
-
-.search-button,
-.menu-button,
-.all-button {
-    display: inline-block;
-    text-decoration: none;
-
-    background: linear-gradient(to right, #009dff, #35bd86, #ff4242);
-
-    font-family: "BalatroFont", monospace;
-    font-size: 30px;
-
-    color: white;
-    text-shadow: 3px 3px 0 #000;
-
-    padding: 24px 64px;
-
-    border: none;
-    border-radius: 10px;
-
-    cursor: pointer;
-}
-
-.menu-button {
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.search-button,
-.all-button {
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-.search-button {
-    margin-left: -150px;
-}
-
-.all-button {
-    margin-left: 150px;
 }
