@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
-    const jokersContainer = document.querySelector('.jokers-container');
-    const menuButton = document.querySelector('.menu-button');
+    const jokers_container = document.querySelector('.jokers-container');
+    const menu_button = document.querySelector('.menu-button');
 
 
-    if (menuButton) {
-        menuButton.addEventListener('click', () => {
+    if (menu_button) {
+        menu_button.addEventListener('click', () => {
             window.location.href = 'balatro.html';
         });
     }
@@ -17,38 +17,38 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error(`Could not load jokersData.json. Status: ${response.status}`);
         }
 
-        const jokerData = await response.json();
+        const joker_data = await response.json();
 
         const params = new URLSearchParams(window.location.search);
 
-        const selectedRarity = params.get('rarity') || '';
-        const selectedType = params.get('type') || '';
+        const selected_rarity = params.get('rarity') || '';
+        const selected_type = params.get('type') || '';
 
-        let filteredJokers;
+        let filtered_jokers;
 
-        if (selectedRarity && selectedType === 'all') {
-            filteredJokers = jokerData.Jokers;
+        if (selected_rarity && selected_type === 'all') {
+            filtered_jokers = joker_data.Jokers;
 
         } else {
-            filteredJokers = jokerData.Jokers.filter(joker => {
+            filtered_jokers = joker_data.Jokers.filter(joker => {
 
-                const matchesRarity =
-                    !selectedRarity ||
-                    joker.Rarity.toLowerCase() === selectedRarity.toLowerCase();
+                const matches_rarity =
+                    !selected_rarity ||
+                    joker.Rarity.toLowerCase() === selected_rarity.toLowerCase();
 
-                const matchesType =
-                    !selectedType ||
-                    joker.Type.toLowerCase() === selectedType.toLowerCase();
+                const matches_type =
+                    !selected_type ||
+                    joker.Type.toLowerCase() === selected_type.toLowerCase();
 
-                return matchesRarity && matchesType;
+                return matches_rarity && matches_type;
             });
         }
 
-        displayJokers(filteredJokers, jokersContainer);
+        displayJokers(filtered_jokers, jokers_container);
 
     } catch (error) {
 
-        displayJokers([], jokersContainer);
+        displayJokers([], jokers_container);
     }
 });
 
@@ -62,15 +62,15 @@ function displayJokers(jokers, container) {
 
     container.innerHTML = '';
 
-    const noJokers = document.querySelector('.no-jokers');
+    const no_jokers = document.querySelector('.no-jokers');
 
 
     if (jokers.length === 0) {
 
         container.style.display = 'none';
 
-        if (noJokers) {
-            noJokers.style.display = 'flex';
+        if (no_jokers) {
+            no_jokers.style.display = 'flex';
         }
 
         return;
@@ -79,23 +79,23 @@ function displayJokers(jokers, container) {
 
         container.style.display = 'grid';
 
-        if (noJokers) {
-            noJokers.style.display = 'none';
+        if (no_jokers) {
+            no_jokers.style.display = 'none';
         }
 
         jokers.forEach(joker => {
 
-            const jokerCard = document.createElement('article');
+            const joker_card = document.createElement('article');
 
-            jokerCard.classList.add('joker-card');
+            joker_card.classList.add('joker-card');
 
-            jokerCard.innerHTML = `
+            joker_card.innerHTML = `
                 <img src="${joker.Image}" alt="${joker.Name}">
                 <h2>${joker.Name}</h2>
                 <p>${joker.Description}</p>
             `;
 
-            container.appendChild(jokerCard);
+            container.appendChild(joker_card);
         });
     }
 }

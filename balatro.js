@@ -1,17 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const filterButtons = document.querySelectorAll('.filters button');
-    const searchButton = document.querySelector('.search-button');
-    const all_button = document.querySelector('.all-button').click();
+    const filter_buttons = document.querySelectorAll('.filters button');
+    const search_button = document.querySelector('.search-button');
 
-    restoreSelectedOption('rarity', 'Rarity');
-    restoreSelectedOption('type', 'Type');
+    restoreselected_option('rarity', 'Rarity');
+    restoreselected_option('type', 'Type');
 
-    console.log("Search:", searchButton);
-    console.log("All:", all_button);
-
-    filterButtons.forEach(button => {
+    filter_buttons.forEach(button => {
 
         button.addEventListener('click', () => {
 
@@ -23,19 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const buttons = section.querySelectorAll('button');
             const label = section.querySelector('label');
 
-            let sectionName = '';
+            let section_name = '';
 
             if (section.classList.contains('rarity')) {
-                sectionName = 'rarity';
+                section_name = 'rarity';
             } 
             else if (section.classList.contains('type')) {
-                sectionName = 'type';
+                section_name = 'type';
             } 
             else {
                 return;
             }
 
-            const selectedOption = button.textContent.trim();
+            const selected_option = button.textContent.trim();
 
             buttons.forEach(btn => {
                 btn.classList.remove('selected');
@@ -43,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             button.classList.add('selected');
 
-            localStorage.setItem(sectionName, selectedOption);
+            localStorage.setItem(section_name, selected_option);
 
             if (label) {
                 label.textContent =
-                    `${sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}: ${selectedOption}`;
+                    `${section_name.charAt(0).toUpperCase() + section_name.slice(1)}: ${selected_option}`;
             }
 
             if (checkbox) {
@@ -59,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    if (searchButton) {
-        searchButton.addEventListener('click', () => {
+    if (search_button) {
+        search_button.addEventListener('click', () => {
 
             const rarity = localStorage.getItem('rarity') || '';
             const type = localStorage.getItem('type') || '';
@@ -74,22 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function restoreSelectedOption(sectionName, defaultLabelText) {
+function restoreselected_option(section_name, defaultLabelText) {
 
-    const section = document.querySelector(`.${sectionName}`);
+    const section = document.querySelector(`.${section_name}`);
 
     if (!section) return;
 
-    const savedOption = localStorage.getItem(sectionName);
+    const saved_option = localStorage.getItem(section_name);
     const label = section.querySelector('label');
 
-    if (!savedOption) return;
+    if (!saved_option) return;
 
     const buttons = section.querySelectorAll('button');
 
     buttons.forEach(button => {
 
-        if (button.textContent.trim() === savedOption.trim()) {
+        if (button.textContent.trim() === saved_option.trim()) {
             button.classList.add('selected');
         } 
         else {
@@ -99,7 +95,7 @@ function restoreSelectedOption(sectionName, defaultLabelText) {
     });
 
     if (label) {
-        label.textContent = `${defaultLabelText}: ${savedOption}`;
+        label.textContent = `${defaultLabelText}: ${saved_option}`;
     }
 
 }
